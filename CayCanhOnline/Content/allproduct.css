@@ -1,0 +1,10 @@
+.mgt-40{
+    margin-top: 40px;
+}
+
+.list-group-item.active{
+    background-color: #28a745;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}

@@ -1,0 +1,15 @@
+﻿@using CayCanhOnline.Models
+@{
+    KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+}
+@if (Session["TaiKhoan"] == null)
+{
+    <li><a href="~/User/DangNhap?id=1"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+    <li><a href="@Url.Action("DangKy", "User")"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+}
+else
+{
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Xin chào @kh.HoTen</a></li>
+    <li><a href="@Url.Action("DangXuat", "User")"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+}
+

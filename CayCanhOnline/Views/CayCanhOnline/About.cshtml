@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayoutUserDetail.cshtml";
+}
+
+<h2 class="section-title">@Model.TieuDe</h2>
+
+<div class="col-md-12">
+    <div class="about-content mt-5">
+        @Html.Raw(Model.MoTa.ToString().Replace("\n", "<p></p>&nbsp&nbsp&nbsp"))
+    </div>
+    <p style="text-align:right;" class="mt-3">Ngày cập nhật: @Html.FormatValue(Model.NgayCapNhat, "{0:MM/dd/yyyy}")</p>
+</div>
+

@@ -1,0 +1,103 @@
+﻿@using CayCanhOnline.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<CayCanhOnline.Models.KHACHHANG>
+@helper Truncate(String sv, int leng)
+{
+if (sv.Length > leng)
+{
+        @sv.Substring(0, leng) <text> ... </text>
+
+}
+else
+{
+        @sv
+}
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">QUẢN LÝ THÔNG TIN KHÁCH HÀNG</h2>
+
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:180px">
+            Họ tên
+        </th>
+        <th style="width:120px">
+            Tài khoản
+        </th>
+        <th style="width:90px">
+            Mật khẩu
+        </th>
+        <th style="width:70px">
+            Email
+        </th>
+        <th style=" width:140px">
+            Địa chỉ
+        </th>
+        <th style="width:50px">
+            Điện thoại
+        </th>
+        <th style=" width:90px">
+            Ngày sinh
+        </th>
+        <th style="text-align:center"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoan)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhau)
+            </td>
+
+            <td>
+                @Html.Raw(Truncate(item.Email, 20).ToString())
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+
+            <td>
+                @Html.FormatValue(item.NgaySinh, "{0:dd/MM/yyyy}")
+            </td>
+            <td style="text-align:right">
+                <a href="@Url.Action("Edit",new { id = item.MaKH})" class=" btn btn-warning" role="button">Sửa</a>
+                <a href="@Url.Action("Details", new{ id = item.MaKH})" class=" btn btn-primary" role="button">Chi tiết</a>
+                <a href="@Url.Action("Delete", new{ id = item.MaKH})" class=" btn btn-danger" role="button">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 :
+Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>
+

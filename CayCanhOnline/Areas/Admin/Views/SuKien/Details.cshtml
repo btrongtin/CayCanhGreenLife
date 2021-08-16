@@ -1,0 +1,74 @@
+﻿@model CayCanhOnline.Models.SUKIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style type="text/css">
+    img {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+</style>
+<h2 style="text-align:center">CHI TIẾT SỰ KIỆN</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tiêu đề:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            Mô tả:
+        </dt>
+
+        <dd>
+            @Html.Raw(@Model.MoTa.ToString().Replace("\n", "</p><p>&nbsp&nbsp&nbsp&nbsp"))
+        </dd>
+
+        <dt>
+
+            Ảnh bìa:
+        </dt>
+
+        <dd>
+            <img src="~/Images/@Model.AnhBia" alt="@Model.TieuDe" />
+        </dd>
+
+        <dt>
+            Ngày đăng:
+        </dt>
+
+        <dd>
+            @Html.FormatValue(@Model.NgayDang, "{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+            Ngày bắt đầu:
+        </dt>
+
+        <dd>
+            @Html.FormatValue(@Model.NgayBatDau, "{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+            Ngày kết thúc:
+        </dt>
+
+        <dd>
+            @Html.FormatValue(@Model.NgayKetThuc, "{0:dd/MM/yyyy}")
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaSK }) |
+    @Html.ActionLink("VỀ TRANG QUẢN LÝ SỰ KIỆN", "Index")
+</p>

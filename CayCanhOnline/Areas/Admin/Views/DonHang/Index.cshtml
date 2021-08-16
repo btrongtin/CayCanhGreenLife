@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CayCanhOnline.Models.DONDATHANG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">QUẢN LÝ THÔNG TIN ĐƠN HÀNG</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã đơn hàng
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Tình trạng thanh toán
+        </th>
+        <th>
+            Tình trạng giao hàng
+        </th>
+        <th>
+            Ngày đặt
+        </th>
+        <th>
+            Ngày giao
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDonHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaThanhToan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrangGiaoHang)
+            </td>
+            <td>
+                @Html.FormatValue(item.NgayDat, "{0:dd/MM/yyyy}")
+            </td>
+            <td>
+                @Html.FormatValue(item.NgayGiao, "{0:dd/MM/yyyy}")
+            </td>
+            <td style="text-align:right">
+                <a href="@Url.Action("Edit",new { id = item.MaDonHang})" class=" btn btn-warning" role="button">Sửa</a>
+                <a href="@Url.Action("Details", new{ id = item.MaDonHang})" class=" btn btn-primary" role="button">Chi tiết</a>
+                <a href="@Url.Action("Delete", new{ id = item.MaDonHang})" class=" btn btn-danger" role="button">Xóa</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+

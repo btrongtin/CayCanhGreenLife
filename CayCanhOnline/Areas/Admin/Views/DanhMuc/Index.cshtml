@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CayCanhOnline.Models.DANHMUC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="text-align:center; width:140px">
+            Tên danh mục
+        </th>
+
+        <th style="text-align:center; width: 80px">
+            @Html.DisplayNameFor(model => model.First().AnhBia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDM)
+        </td>
+        <td>
+            <img src="~/Images/@item.AnhBia" style="width:50px" />
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.MaDM }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaDM }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaDM })*@
+
+            @Html.ActionLink("Sửa", "Edit", new { id = item.MaDM }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.MaNXB }) |*@
+            @*@Html.ActionLink("Chi tiết", "Details", new { id = item.MaDM }) |*@
+            @*<a href="~/DanhMuc/Details?id=@item.MaDM">Chi Tiết</a> |*@
+            <a href="~/Admin/DanhMuc/Details?id=@item.MaDM">Chi Tiết</a> |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaDM })
+        </td>
+    </tr>
+}
+
+</table>

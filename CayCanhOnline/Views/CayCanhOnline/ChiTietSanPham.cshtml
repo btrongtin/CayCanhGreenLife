@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_LayoutUserDetail.cshtml";
+}
+
+<h2 class="page-title">CHI TIẾT SẢN PHẨM</h2>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <img src="~/Images/@Model.AnhBia" alt="@Model.TenSP" class="img-100">
+    </div>
+    <div class="col-md-6 prod-detail-right">
+        <div class="prod-detail-price">
+            <span>@Html.FormatValue(Model.GiaBan, "{0:#,###}")đ</span>
+        </div>
+        <div class="prod-detail-description">
+            
+            <p class="ngaycapnhat">Ngày cập nhật: @Html.FormatValue(Model.NgayCapNhat, "{0:MM/dd/yyyy}")</p>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12 prod-detail-buy">
+                <p>
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new {msp = Model.MaSP, url = Request.Url.ToString()})" class="btn btn-success prod-detail-btn" role="button">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <h2 class="page-title mt-3">Mô tả</h2>
+        <div class="prod-detail-description">
+            <p>
+                @Html.Raw(Model.MoTa.ToString().Replace("\n", "<p></p>&nbsp&nbsp&nbsp"))
+            </p>
+        </div>
+    </div>
+
+</div>
+

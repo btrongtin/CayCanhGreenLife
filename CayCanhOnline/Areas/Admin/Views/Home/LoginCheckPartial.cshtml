@@ -1,0 +1,64 @@
+﻿@using CayCanhOnline.Models
+@{
+    ADMIN ad = (ADMIN)Session["Admin"];
+}
+
+<style>
+    .nav-item{
+        font-weight: 500;
+    }
+</style>
+
+@if (Session["Admin"] != null)
+{
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "SanPham")">QUẢN LÝ SẢN PHẨM</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "DanhMuc")">QUẢN LÝ DANH MỤC</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "KhachHang")">QUẢN LÝ KHÁCH HÀNG</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "DonHang")">QUẢN LÝ ĐƠN HÀNG</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Group", "ThongKe")">THỐNG KÊ</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Index", "SuKien")">QUẢN LÝ SỰ KIỆN</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Details", "CuaHang")">QUẢN LÝ ABOUT</a>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" href="#">QUẢN LÝ SẢN PHẨM</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">QUẢN LÝ DANH MỤC</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">QUẢN LÝ KHÁCH HÀNG</a>
+    </li>
+    <li class="nav-item">
+         <a class="nav-link" href="#">QUẢN LÝ ĐƠN HÀNG</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">THỐNG KÊ</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">QUẢN LÝ SỰ KIỆN</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">QUẢN LÝ ABOUT</a>
+    </li>
+
+}
+

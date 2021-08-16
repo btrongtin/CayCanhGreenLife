@@ -1,0 +1,16 @@
+﻿<h2 class="section-title">THỐNG KÊ SỐ SẢN PHẨM THEO DANH MỤC</h2>
+<table border="1" class="mt-3">
+    <tr style="background-color:burlywood; font-weight: bold;">
+        <td>Mã DM</td>
+        <td>Số Sản Phẩm</td>
+        <td>Tổng Số Sản Phẩm</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Count</td>
+            <td>@item.Sum</td>
+        </tr>
+    }
+</table>

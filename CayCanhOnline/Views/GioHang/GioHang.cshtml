@@ -1,0 +1,61 @@
+﻿
+@using CayCanhOnline.Models
+@model List<GioHang>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutUserDetail.cshtml";
+}
+
+<h2 style="text-align:center;">THÔNG TIN GIỎ HÀNG</h2>
+<table border="1">
+    <tr style="background-color:#9ca1a4; font-size:15px; font-weight:bold; text-align:center;">
+        <td>Mã Sản phẩm</td>
+        <td>Tên Sản phẩm</td>
+        <td>Ảnh Bìa</td>
+        <td>Số Lượng</td>
+        <td>Đơn Giá</td>
+        <td>Thành Tiền</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td align="center">@item.iMaSP</td>
+            <td>@item.sTenSP</td>
+            <td><img src="~/Images/@item.sAnhBia" style="width:100px;" /></td>
+            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { iMaSP = item.iMaSP }))
+            {
+                <td align="center"><input type="number" min="1" name="txtSoLuong" value="@item.iSoLuong" style="background-color:#f4ff94" /></td>
+                <td align="center">@string.Format("{0:#,##0,0}", @item.dDonGia)</td>
+                <td align="center">@string.Format("{0:#,##0,0}", @item.dThanhTien)</td>
+                <td><a href="@Url.Action("ChiTietSanPham", "CayCanhOnline", new { id = item.iMaSP})">Chi tiết</a></td>
+                <td>@Html.ActionLink("Xóa", "XoaSPKhoiGioHang", new { @iMaSP = item.iMaSP })</td>
+                <td><input type="submit" value="Cập nhật" /></td>
+            }
+
+        </tr>
+    }
+    <tr>
+        <td colspan="4" style="text-align:right; color:red; font-weight:bold; padding-right:5px;">
+            Tổng số lượng: @string.Format("{0:#,##0}", @ViewBag.TongSoLuong)
+        </td>
+        <td colspan="5" style="text-align:right; color:red; font-weight:bold;">
+            Tổng tiền: @string.Format("{0:#,##0,0}", @ViewBag.TongTien) VNĐ
+        </td>
+    </tr>
+    <tr style="font-weight:bold; color:blue; text-align:right;">
+        <td colspan="9">
+            @Html.ActionLink("Xóa giỏ hàng", "XoaGioHang")
+        </td>
+    </tr>
+    <tr style="font-weight:bold; color:blue; text-align:center;">
+        <td colspan="9">
+            @Html.ActionLink("ĐẶT HÀNG", "DatHang", "GioHang")
+        </td>
+    </tr>
+</table>
+
+

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CayCanhOnline.Models.DanhMucViewModel>
+
+<h2>Danh mục nổi bật<span></span></h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="category-img-holder">
+                <img src="~/Images/@item.AnhBia" alt="" class="img-100">
+                <div class="category-img-title">
+                    <a href="@Url.Action("SPTheoDM","CayCanhOnline", new { iMaDM = item.MaDM })">@item.TenDM</a>
+                </div>
+            </div>
+        </div>
+    }
+    
+
+    
+</div>

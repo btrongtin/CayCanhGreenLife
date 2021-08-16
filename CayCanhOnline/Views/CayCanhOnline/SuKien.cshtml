@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CayCanhOnline.Models.SUKIEN>
+
+<div class="row row-mlr-0">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <a href="@Url.Action("ChiTietSuKien", "CayCanhOnline", new {id = item.MaSK})">
+                <img src="~/Images/@item.AnhBia" alt="card sale " class="img-100 group-card-sale">
+            </a>
+        </div>
+    }
+</div>

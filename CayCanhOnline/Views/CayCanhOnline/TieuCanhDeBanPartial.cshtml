@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CayCanhOnline.Models.SANPHAM>
+<h2>Tiểu cảnh để bàn<span></span></h2>
+<div class="row">
+
+    @foreach (var sanpham in Model)
+    {
+        <div class="col-md-15">
+            <div class="card">
+                <img class="card-img-top" src="~/Images/@sanpham.AnhBia" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text prod-name"><a href="@Url.Action("ChiTietSanPham", "CayCanhOnline", new {id = sanpham.MaSP})">@sanpham.TenSP</a></p>
+                    <p class="card-text prod-price">@Html.FormatValue(sanpham.GiaBan, "{0:#,###}")đ</p>
+                    <div class="center">
+                        @*<button type="button" class="btn btn-success mx-auto d-block"><i class="fas fa-cart-plus"></i> Add to cart</button>*@
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new {msp = @sanpham.MaSP, url = Request.Url.ToString()})" class="btn btn-success mx-auto d-block" role="button">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    
+
+  
+
+
+</div>

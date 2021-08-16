@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietSuKien";
+    Layout = "~/Views/Shared/_LayoutUserDetail.cshtml";
+}
+
+<h2>@Model.TieuDe</h2>
+<p class="ngaycapnhat">Ngày cập nhật: @Html.FormatValue(Model.NgayDang, "{0:MM/dd/yyyy}")</p>
+
+<div class="col-md-12">
+    <h2 class="page-title mt-3">Chi tiết sự kiện</h2>
+    <p class="ngaycapnhat">Ngày bắt đầu: @Html.FormatValue(Model.NgayBatDau, "{0:MM/dd/yyyy}")</p>
+    <p class="ngaycapnhat">Ngày kết thúc: @Html.FormatValue(Model.NgayKetThuc, "{0:MM/dd/yyyy}")</p>
+    <div class="prod-detail-description">
+        <p>
+            @Html.Raw(Model.MoTa.ToString().Replace("\n", "<p></p>&nbsp&nbsp&nbsp"))
+        </p>
+    </div>
+</div>
+

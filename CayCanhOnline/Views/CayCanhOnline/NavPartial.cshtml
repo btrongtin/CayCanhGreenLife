@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CayCanhOnline.Models.DANHMUC>
+
+<div class="navbar toplink-navbar">
+    <div class="container d-flex justify-content-end">
+        <div class="top-link">
+            <ul>
+                @*<li><a href="#">Đăng nhập|</a></li>
+                <li><a href="#">Đăng ký|</a></li>*@
+                @Html.Action("LoginPartial", "User")
+                <li>@Html.Action("GioHangPartial", "GioHang")</li>
+            </ul>
+
+        </div>
+
+        <hr class="m-0 toplink-hr">
+    </div>
+
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container">
+
+        <a class="navbar-brand" href="@Url.Action("Index", "CayCanhOnline")" style="color: #ffdd20; font-weight:bold;">GreenLife</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="font-weight:500;">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index", "CayCanhOnline")">TRANG CHỦ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "CayCanhOnline")">GIỚI THIỆU</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SẢN PHẨM
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach (var item in Model)
+                        {
+                            <a class="dropdown-item" href="@Url.Action("SPTheoDM","CayCanhOnline", new { iMaDM = item.MaDM })">@item.TenDM</a>
+                        }
+                    </div>
+                </li>
+
+            </ul>
+            @*<form class="form-inline my-2 my-lg-0">*@
+@using (Html.BeginForm("Search", "Search", FormMethod.Get, new { @class = "navbar-form navbar-right form-inline my-2 my-lg-0", @role = "search" }))
+{
+    <div class="form-group">
+        <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" name="strSearch">
+    </div>
+    
+    <button class="btn btn-outline-success my-2 my-sm-0 btn-search" type="submit">Tìm</button>
+}
+                
+            @*</form>*@
+        </div>
+
+    </div>
+</nav>

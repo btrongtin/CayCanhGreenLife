@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10" name="dbCayCanhOnline">
+  <DataContextMoniker Name="/dbCayCanhOnlineDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5ff584ab-9e3a-4b9f-b32c-bead834ae72c" absoluteBounds="6.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df28e3f3-4417-46ec-8015-76ab448462f6" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e04a5533-25be-41e1-9736-ace5fdc1ca67" absoluteBounds="6.25, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/CHITIETDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26418bf4-6885-4c5f-8805-8d7f06bcca99" absoluteBounds="6.265, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e0cfb33-65f3-4b19-b993-92e0020e474e" absoluteBounds="0.75, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/DANHMUC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84c87365-290f-4861-98d9-e7faf4c0ebc0" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="802696d8-a76c-4f26-b938-b7136eaf189e" absoluteBounds="3.5, 5.125, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6037282d-3680-46f5-aeed-75a67ef2f158" absoluteBounds="3.515, 5.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6235629b-4165-41c3-8810-cd5d443f7850" absoluteBounds="0.75, 5, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bebd9e6a-9a7e-4ecd-b10a-7cb390510b2e" absoluteBounds="0.765, 5.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b38e03c-07a4-477c-92d9-b2d5f6295531" absoluteBounds="3.5, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/SANPHAM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b486b8a-cea1-4bff-b176-a64728a99260" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.4319482421875); (6.46875 : 6.4319482421875); (6.46875 : 2.95359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbCayCanhOnlineDataContext/DONDATHANG/DONDATHANG_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="802696d8-a76c-4f26-b938-b7136eaf189e" />
+        <classShapeMoniker Id="e04a5533-25be-41e1-9736-ace5fdc1ca67" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.10659912109375); (3.5 : 6.10659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbCayCanhOnlineDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="6235629b-4165-41c3-8810-cd5d443f7850" />
+        <classShapeMoniker Id="802696d8-a76c-4f26-b938-b7136eaf189e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.16429768880208); (6.25 : 2.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbCayCanhOnlineDataContext/SANPHAM/SANPHAM_CHITIETDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="6b38e03c-07a4-477c-92d9-b2d5f6295531" />
+        <classShapeMoniker Id="e04a5533-25be-41e1-9736-ace5fdc1ca67" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbCayCanhOnlineDataContext/DANHMUC/DANHMUC_SANPHAM" />
+      <nodes>
+        <classShapeMoniker Id="8e0cfb33-65f3-4b19-b993-92e0020e474e" />
+        <classShapeMoniker Id="6b38e03c-07a4-477c-92d9-b2d5f6295531" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="99e4773d-cfb8-42e8-b7a9-96e5b41a5762" absoluteBounds="6.25, 7.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/SUKIEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5afe1b5a-7125-4a23-8183-835415673c75" absoluteBounds="6.265, 8.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4af6af8f-dc59-47d9-b3d1-7ea6752312aa" absoluteBounds="1.375, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbCayCanhOnlineDataContext/ABOUT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4cebe089-b513-48dd-8bab-def6d85f6ad6" absoluteBounds="1.3899999999999997, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

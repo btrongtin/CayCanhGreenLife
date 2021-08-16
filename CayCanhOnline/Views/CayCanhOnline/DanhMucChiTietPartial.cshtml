@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CayCanhOnline.Models.DANHMUC>
+
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">
+        DANH MỤC
+    </a>
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPTheoDM","CayCanhOnline", new { iMaDM = item.MaDM })" class="list-group-item list-group-item-action">@item.TenDM</a>
+    }
+    
+</div>

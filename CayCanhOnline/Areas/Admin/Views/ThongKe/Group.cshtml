@@ -1,0 +1,31 @@
+﻿@model IEnumerable<IGrouping<int?, CayCanhOnline.Models.SANPHAM>>
+@{
+    ViewBag.Title = "Group";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.Action("ThongKe", "ThongKe")
+
+<h2 class="section-title">DANH SÁCH SẢN PHẨM THEO DANH MỤC</h2>
+@foreach (var item in Model)
+{
+    <div>
+        <h4 class="mt-3" style="font-weight: bold; color:red;">MÃ DANH MỤC @item.Key</h4>
+        <table border="1">
+            <tr style="background-color: burlywood; font-weight: bold;">
+                <td>Mã sản phẩm</td>
+                <td>Tên sản phẩm</td>
+                <td>Tên DM</td>
+            </tr>
+            @foreach (var sp in item)
+            {
+                <tr>
+                    <td>@sp.MaSP</td>
+                    <td>@sp.TenSP</td>
+                    <td>@sp.DANHMUC.TenDM</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+

@@ -1,0 +1,86 @@
+﻿@model CayCanhOnline.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ĐIỀU CHỈNH THÔNG TIN SÁCH</h2>
+
+@using (Html.BeginForm("Edit", "SanPham", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã sản phẩm:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="iMaSP" value="@Model.MaSP" readonly />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Tên sản phẩm:</label>
+            <div class="col-md-10">
+                <input type="text" size="70" name="sTenSP" value="@Model.TenSP" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mô tả:</label>
+            <div class="col-md-10">
+                <textarea name="sMoTa"><p>@Model.MoTa.Replace("\n", "</p><p>")</p></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ảnh bìa:</label>
+            <div class="col-md-10">
+                <input type="file" name=" fFileUpload" />
+                <img src="~/Images/@Model.AnhBia" width="120">(Ảnh hiện tại)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Ngày cập nhật:</label>
+            <div class="col-md-10">
+                <input type="datetime" name="dNgayCapNhat" required value="@Convert.ToDateTime(Model.NgayCapNhat)" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Số lượng:</label>
+            <div class="col-md-10">
+                <input type="number" min="1" required name="iSoLuong" value="@Model.SoLuongBan" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Giá bán:</label>
+            <div class="col-md-10">
+                <input type="number" min="1" required name="mGiaban" value="@Model.GiaBan" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Danh mục:</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaDM");
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="LƯU THÔNG TIN" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("vỀ TRANG QUẢN LÝ SẢN PHẨM", "Index")
+</div>

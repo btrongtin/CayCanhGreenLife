@@ -1,0 +1,70 @@
+﻿
+
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style type="text/css">
+    td {
+        height: 40px;
+    }
+</style>
+<h4 style="color:red; text-align:center;">@ViewBag.ThongBao</h4>
+<h2 style="text-align:center;" class="mt-5">ĐĂNG NHẬP</h2>
+<div class="container">
+    <table align="center" style="margin-left:auto; margin-right:auto;">
+        @using (Html.BeginForm("DangNhap", "User"))
+        {
+            @Html.ValidationSummary(true)
+            if (Request.Cookies["TenDN"] != null && Request.Cookies["MatKhau"] != null)
+            {
+                <tr>
+                    <td>Tên đăng nhập:</td>
+                    <td>
+                        @Html.TextBox("TenDN", Request.Cookies["TenDN"].Value)
+                        @ViewData["Err1"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td>
+                        @Html.Password("MatKhau", Request.Cookies["MatKhau"].Value)
+                        @ViewData["Err2"]
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>Tên đăng nhập:</td>
+                    <td>
+                        @Html.TextBox("TenDN")
+                        @ViewData["Err1"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật khẩu:</td>
+                    <td>
+                        @Html.Password("MatKhau")
+                        @ViewData["Err2"]
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td></td>
+                <td>
+                    @Html.CheckBox("remember")<span style="font-style:italic">Nhớ thông tin đăng nhập</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Đăng nhập" />
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+

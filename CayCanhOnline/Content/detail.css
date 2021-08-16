@@ -1,0 +1,26 @@
+.prod-detail-price{
+    margin-bottom: 15px;
+}
+
+.prod-detail-price span{
+    font-size: 38px;
+    font-weight: 500;
+    color: #28a745;
+}
+
+.prod-detail-description{
+    text-align: justify;
+}
+
+.prod-detail-right{
+    position: relative;
+}
+
+.prod-detail-buy{
+    position: absolute;
+    bottom: 0px;
+}
+
+.prod-detail-btn{
+    padding: 15px 20px;
+}

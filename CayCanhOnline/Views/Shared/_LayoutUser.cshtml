@@ -1,0 +1,103 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/Content/main.css">
+    <title>@ViewBag.title</title>
+</head>
+<body>
+    <header>
+        
+        @Html.Action("NavPartial", "CayCanhOnline")
+
+    </header>
+
+    @RenderBody()
+
+    <!--Footer-->
+    <footer class="footer-container">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info-shop">
+                            <h4>GreenLife</h4>
+                            <p>Địa chỉ: 96/2 Lê Hồng Phong, Phú Lợi, Thủ Dầu Một, Bình Dương.</p>
+                            <p>Điện thoại: 082 858 2484</p>
+                            <p>Email: btrongtin891@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="footer-info-title">
+                                    <span>Về chúng tôi</span>
+                                </div>
+                                <div class="footer-info-detail">
+                                    <ul>
+                                        <li><a href="#">Trang chủ</a></li>
+                                        <li><a href="#">Giới thiệu</a></li>
+                                        <li><a href="#">Sản phẩm</a></li>
+                                        <li><a href="#">Tin tức</a></li>
+                                        <li><a href="#">Liên hệ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="footer-info-title">
+                                    <span>Chính sách</span>
+                                </div>
+                                <div class="footer-info-detail">
+                                    <ul>
+                                        <li><a href="#">Trang chủ</a></li>
+                                        <li><a href="#">Giới thiệu</a></li>
+                                        <li><a href="#">Sản phẩm</a></li>
+                                        <li><a href="#">Tin tức</a></li>
+                                        <li><a href="#">Liên hệ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="footer-info-title">
+                                    <span>Hỗ trợ</span>
+                                </div>
+                                <div class="footer-info-detail">
+                                    <ul>
+                                        <li><a href="#">Trang chủ</a></li>
+                                        <li><a href="#">Giới thiệu</a></li>
+                                        <li><a href="#">Sản phẩm</a></li>
+                                        <li><a href="#">Tin tức</a></li>
+                                        <li><a href="#">Liên hệ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>Cây cảnh GreenLife | Hân hạnh được phục vụ quý khách</span>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>
